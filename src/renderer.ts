@@ -88,6 +88,15 @@ export class Renderer {
       }
     });
 
+    await page.setRequestInterception(true);
+    page.on('request', request => {
+      if (request.url().includes('https://firestore.googleapis.com')) {
+        request.abort();
+      } else {
+        request.continue();
+      }
+    });
+
     try {
       // Navigate to page. Wait until there are no oustanding network requests.
       response = await page.goto(
