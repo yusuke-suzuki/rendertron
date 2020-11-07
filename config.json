@@ -1,0 +1,10 @@
+{
+  "cache": "memory",
+  "width": 375,
+  "height": 812,
+  "puppeteerArgs": [
+    "--no-sandbox",
+    "--disable-dev-shm-usage",
+    "--disable-setuid-sandbox"
+  ]
+}
