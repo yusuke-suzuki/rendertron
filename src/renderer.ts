@@ -37,6 +37,10 @@ export class Renderer {
       return true;
     }
 
+    if (parsedUrl.hostname && parsedUrl.hostname.includes('firestore.googleapis.com')) {
+      return true;
+    }
+
     return false;
   }
 
